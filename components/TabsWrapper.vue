@@ -2,6 +2,7 @@
   <div class="tabs relative">
     <ul class="tab_header list-none p-0 flex absolute z-30">
       <li 
+        role="button"
         class="text-center text-xs px-2 py-1 mt-1 ml-1 bg-gray-300 dark:bg-gray-800 rounded-sm cursor-pointer transition-all" 
         :class="[title === selectedTitle ? 'bg-blue-300 text-white font-medium' : '' ]"
         v-for="title in tabTitles" 

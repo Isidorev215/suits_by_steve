@@ -29,7 +29,8 @@
             <SuitOne :propColor="fullSuitPayload" />
           </Tab>
           <Tab title="Suit 2">
-            <img src="~/assets/img/white_suit_2i.jpg" alt="">
+            <img src="https://via.placeholder.com/640x800.png?text=No+Content" alt="">
+            <!-- <img src="~/assets/img/white_suit_2i.jpg" alt=""> -->
           </Tab>
         </TabsWrapper>
 
