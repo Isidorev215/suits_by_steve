@@ -22,15 +22,18 @@
           </button>
         </div>
       </div>
-      <div class="right col-span-3 lg:col-span-1 bg-transparent border-l-2 flex justify-center items-center">
+      <div class="right col-span-3 lg:col-span-1 px-4 lg:px-0 bg-transparent border-l-2 flex flex-col justify-around items-center">
+        
         <TabsWrapper>
           <Tab title="Suit 1">
-            <img src="~/assets/img/white_suit_1.jpg" alt="">
+            <SuitOne />
           </Tab>
           <Tab title="Suit 2">
             <img src="~/assets/img/white_suit_2i.jpg" alt="">
           </Tab>
         </TabsWrapper>
+
+        <ImageControls />
       </div>
     </main>
     
@@ -41,6 +44,9 @@
 
 </template>
 
+<script setup lang="ts">
+
+</script>
 
 <style>
 html.dark {

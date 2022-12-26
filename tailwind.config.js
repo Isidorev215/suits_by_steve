@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "stv-black": "#000000",
+        "stv-black": "#2E2E2E",
         "stv-navy": "#000080",
         "stv-gray": "#9391A0",
         "stv-brown": "#5C4033",
