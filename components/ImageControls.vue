@@ -13,14 +13,14 @@
 
       <!-- color select -->
         <div v-if="openColorSelector" class="color-select-wrapper">
-          <div v-if="(selection.suitSection !== suitSection.SHIRT)" class="suit flex flex-col items-center space-y-3 p-4 bg-white dark:bg-gray-800 shadow-md rounded-md absolute -top-72 left-1/2 -translate-x-1/2">
+          <div v-if="(selection.suitSection !== suitSection.SHIRT)" class="suit flex flex-col items-center space-y-3 p-4 bg-white dark:bg-gray-800 shadow-md rounded-md absolute z-50 -top-72 left-1/2 -translate-x-1/2">
             <button @click="selectColor(color.BLACK)" class="bg-stv-black py-1 px-2 no-underline rounded-lg text-white">Black</button>
             <button @click="selectColor(color.BROWN)" class="bg-stv-brown py-1 px-2 no-underline rounded-lg text-white">Brown</button>
             <button @click="selectColor(color.GRAY)" class="bg-stv-gray py-1 px-2 no-underline rounded-lg text-white">Gray</button>
             <button @click="selectColor(color.NAVY)" class="bg-stv-navy py-1 px-2 no-underline rounded-lg text-white">Navy</button>
             <button @click="selectColor(color.TAN)" class="bg-stv-tan py-1 px-2 no-underline rounded-lg text-white">Tan</button>
           </div>
-          <div v-else class="shirt flex flex-col items-center space-y-3 p-4 bg-white dark:bg-gray-800 shadow-md rounded-md absolute -top-48 left-1/2 -translate-x-1/2">
+          <div v-else class="shirt flex flex-col items-center space-y-3 p-4 bg-white dark:bg-gray-800 shadow-md rounded-md absolute z-50 -top-48 left-1/2 -translate-x-1/2">
             <button @click="selectColor(color.WHITE)" class="bg-stv-white py-1 px-2 no-underline rounded-lg text-gray-800 border border-gray-80">White</button>
             <button @click="selectColor(color.CREAM)" class="bg-stv-cream py-1 px-2 no-underline rounded-lg text-gray-800 border border-gray-80">Cream</button>
             <button @click="selectColor(color.POWDBLUE)" class="bg-stv-powdBlue py-1 px-2 no-underline rounded-lg text-white">Blue</button>

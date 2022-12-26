@@ -10,11 +10,11 @@
             <span>There are five suits you need to get in all. You should not mess it up.... Its all on you.... Make your 70+ suit combinations.</span>
           </p>
           <p class="hidden lg:block mt-3 mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            <span class="bg-stv-black pill">Black </span>
-            <span class="bg-stv-brown pill">Brown </span>
-            <span class="bg-stv-gray pill">Gray </span>
-            <span class="bg-stv-navy pill">Navy </span>
-            <span class="bg-stv-tan pill">Tan </span>
+            <button @click="changeSuit(color.BLACK)" class="bg-stv-black pill">Black </button>
+            <button @click="changeSuit(color.BROWN)" class="bg-stv-brown pill">Brown </button>
+            <button @click="changeSuit(color.GRAY)" class="bg-stv-gray pill">Gray </button>
+            <button @click="changeSuit(color.NAVY)" class="bg-stv-navy pill">Navy </button>
+            <button @click="changeSuit(color.TAN)" class="bg-stv-tan pill">Tan </button>
           </p>
         
           <button title="Randomize" class="inline-flex justify-center items-center py-3 px-5 mt-2 lg:mt-0 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
@@ -26,7 +26,7 @@
         
         <TabsWrapper>
           <Tab title="Suit 1">
-            <SuitOne />
+            <SuitOne :propColor="fullSuitPayload" />
           </Tab>
           <Tab title="Suit 2">
             <img src="~/assets/img/white_suit_2i.jpg" alt="">
@@ -45,7 +45,18 @@
 </template>
 
 <script setup lang="ts">
+import { color } from '~/types/enums'
+import { fullSuitInterface } from '~/types/interfaces'
 
+  const fullSuitPayload = ref<fullSuitInterface>({
+    jacket: color.BLACK,
+    inner: color.WHITE,
+    trousers: color.BLACK,
+  })
+  const changeSuit = (colorPayload: color) => {
+    fullSuitPayload.value.jacket = colorPayload;
+    fullSuitPayload.value.trousers = colorPayload;
+  }
 </script>
 
 <style>
