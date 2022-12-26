@@ -1,14 +1,14 @@
 <template>
   <div class="image_controls" ref="imageControls">
     <div class="w-full flex justify-start items-center space-x-2 relative">
-      <button @click="selectSuitSection(suitSection.JACKET)" class="jacket cursor-pointer w-10 h-10 rounded-full bg-gray-400 flex justify-center items-center shadow-xl">
-        <Icon name="icon-park-solid:wingsuit-flying" color="#ffffff" width="120" :horizontalFlip="true" />
+      <button @click="selectSuitSection(suitSection.JACKET)" class="jacket cursor-pointer w-6 h-6 rounded-full bg-gray-400 flex justify-center items-center shadow-xl">
+        <Icon name="icon-park-solid:wingsuit-flying" color="#ffffff" width="90" :horizontalFlip="true" />
       </button>
-      <button @click="selectSuitSection(suitSection.SHIRT)" class="jacket cursor-pointer w-10 h-10 rounded-full bg-gray-400 flex justify-center items-center shadow-xl">
-        <Icon name="ph:t-shirt-fill" color="white" width="120" :horizontalFlip="true" />
+      <button @click="selectSuitSection(suitSection.SHIRT)" class="jacket cursor-pointer w-6 h-6 rounded-full bg-gray-400 flex justify-center items-center shadow-xl">
+        <Icon name="ph:t-shirt-fill" color="white" width="90" :horizontalFlip="true" />
       </button>
-      <button @click="selectSuitSection(suitSection.TROUSERS)" class="jacket cursor-pointer w-10 h-10 rounded-full bg-gray-400 flex justify-center items-center shadow-xl">
-        <Icon name="icon-park-outline:clothes-pants" color="white" width="120" :horizontalFlip="true" />
+      <button @click="selectSuitSection(suitSection.TROUSERS)" class="jacket cursor-pointer w-6 h-6 rounded-full bg-gray-400 flex justify-center items-center shadow-xl">
+        <Icon name="icon-park-outline:clothes-pants" color="white" width="90" :horizontalFlip="true" />
       </button>
 
       <!-- color select -->

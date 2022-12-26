@@ -5,9 +5,9 @@
     <main class="grid grid-cols-3 gap-3 bg-white dark:bg-gray-900 lg:h-[calc(100vh-8rem)]">
       <div class="left col-span-3 lg:col-span-2 flex justify-center items-center px-4 pt-5 pb-1">
         <div class="">
-          <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white">Every man has to own a Black Suit</h1>
+          <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white">Every man has to own a Black Suit.</h1>
           <p class="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">
-            <span>There are five suits you need to get in all. You should not mess it up.... Its all on you.... Make your 70+ suit combinations.</span>
+            <span>There are five suits you need to get in all. You should not mess it up.... It's all on you.... Make your 70+ suit combinations.</span>
           </p>
           <p class="hidden lg:block mt-3 mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
             <button @click="changeFullSuit(suitColors.BLACK)" class="bg-stv-black pill">Black </button>
