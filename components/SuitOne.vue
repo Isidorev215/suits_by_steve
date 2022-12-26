@@ -27,20 +27,20 @@
 </template>
 
 <script setup lang="ts">
-import { color } from "~/types/enums";
+import { shirtColors, suitColors } from "~/types/enums";
 interface Props {
   propColor?: {
-    jacket?: color
-    shirt?: color
-    trousers?: color
+    jacket?: suitColors
+    shirt?: shirtColors
+    trousers?: suitColors
   }
 }
 
 const props = withDefaults(defineProps<Props>(), {
   propColor: () => ({
-    jacket: color.BLACK,
-    shirt: color.WHITE,
-    trousers: color.BLACK
+    jacket: suitColors.BLACK,
+    shirt: shirtColors.WHITE,
+    trousers: suitColors.BLACK
   })
 })
 </script>

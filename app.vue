@@ -10,15 +10,15 @@
             <span>There are five suits you need to get in all. You should not mess it up.... Its all on you.... Make your 70+ suit combinations.</span>
           </p>
           <p class="hidden lg:block mt-3 mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            <button @click="changeFullSuit(color.BLACK)" class="bg-stv-black pill">Black </button>
-            <button @click="changeFullSuit(color.BROWN)" class="bg-stv-brown pill">Brown </button>
-            <button @click="changeFullSuit(color.GRAY)" class="bg-stv-gray pill">Gray </button>
-            <button @click="changeFullSuit(color.NAVY)" class="bg-stv-navy pill">Navy </button>
-            <button @click="changeFullSuit(color.TAN)" class="bg-stv-tan pill">Tan </button>
+            <button @click="changeFullSuit(suitColors.BLACK)" class="bg-stv-black pill">Black </button>
+            <button @click="changeFullSuit(suitColors.BROWN)" class="bg-stv-brown pill">Brown </button>
+            <button @click="changeFullSuit(suitColors.GRAY)" class="bg-stv-gray pill">Gray </button>
+            <button @click="changeFullSuit(suitColors.NAVY)" class="bg-stv-navy pill">Navy </button>
+            <button @click="changeFullSuit(suitColors.TAN)" class="bg-stv-tan pill">Tan </button>
           </p>
         
-          <button title="Randomize" class="inline-flex justify-center items-center py-3 px-5 mt-2 lg:mt-0 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-            Try it Out
+          <button @click="generateRandom" title="So sayeth Steve Harvey" class="inline-flex justify-center items-center py-3 px-5 mt-2 lg:mt-0 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            Randomize
           </button>
         </div>
       </div>
@@ -45,15 +45,15 @@
 </template>
 
 <script setup lang="ts">
-import { color, suitSection } from '~/types/enums'
+import { suitColors, shirtColors, suitSection } from '~/types/enums'
 import { fullSuitInterface, selectionInterface } from '~/types/interfaces'
 
   const fullSuitPayload = ref<fullSuitInterface>({
-    jacket: color.BLACK,
-    shirt: color.WHITE,
-    trousers: color.BLACK,
+    jacket: suitColors.BLACK,
+    shirt: shirtColors.WHITE,
+    trousers: suitColors.BLACK,
   })
-  const changeFullSuit = (colorPayload: color) => {
+  const changeFullSuit = (colorPayload: suitColors | shirtColors) => {
     fullSuitPayload.value.jacket = colorPayload;
     fullSuitPayload.value.trousers = colorPayload;
   }
@@ -66,6 +66,16 @@ import { fullSuitInterface, selectionInterface } from '~/types/interfaces'
     }else if(payload.suitSection === suitSection.TROUSERS){
       fullSuitPayload.value.trousers = payload.color;
     }
+  }
+  
+  // enums to arrays
+  const suitColorsArray = Object.values(suitColors);
+  const shirtColorsArray = Object.values(shirtColors);
+
+  const generateRandom = () => {
+    fullSuitPayload.value.jacket = suitColorsArray[Math.floor(Math.random()*suitColorsArray.length)];
+    fullSuitPayload.value.shirt = shirtColorsArray[Math.floor(Math.random()*shirtColorsArray.length)];
+    fullSuitPayload.value.trousers = suitColorsArray[Math.floor(Math.random()*suitColorsArray.length)];
   }
 </script>
 
