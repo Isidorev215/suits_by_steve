@@ -7,7 +7,7 @@
       <button @click="selectSuitSection(suitSection.SHIRT)" class="jacket cursor-pointer w-10 h-10 rounded-full bg-gray-400 flex justify-center items-center shadow-xl">
         <Icon name="ph:t-shirt-fill" color="white" width="120" :horizontalFlip="true" />
       </button>
-      <button @click="selectSuitSection(suitSection.PANTS)" class="jacket cursor-pointer w-10 h-10 rounded-full bg-gray-400 flex justify-center items-center shadow-xl">
+      <button @click="selectSuitSection(suitSection.TROUSERS)" class="jacket cursor-pointer w-10 h-10 rounded-full bg-gray-400 flex justify-center items-center shadow-xl">
         <Icon name="icon-park-outline:clothes-pants" color="white" width="120" :horizontalFlip="true" />
       </button>
 
@@ -34,12 +34,14 @@
 import { color, suitSection } from '~/types/enums'
 import { selectionInterface } from '~/types/interfaces'
 
+  const emit = defineEmits(['updateSuitSection'])
+  const imageControls = ref<HTMLDivElement>();
+
   const openColorSelector = ref<boolean>(false);
   const selection = ref<selectionInterface>({
     color: color.BLACK,
     suitSection: suitSection.JACKET
   })
-  const imageControls = ref<HTMLDivElement>();
   onClickOutside(imageControls, () => openColorSelector.value = false)
 
   const selectSuitSection = (selectedSection: suitSection) => {
@@ -49,6 +51,8 @@ import { selectionInterface } from '~/types/interfaces'
 
   const selectColor = (selectedColor: color) => {
     selection.value.color = selectedColor;
+    emit('updateSuitSection', selection.value);
+    openColorSelector.value = false;
   } 
 </script>
 

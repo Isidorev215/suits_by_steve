@@ -12,5 +12,5 @@ export enum color {
 export enum suitSection {
   JACKET = "JACKET",
   SHIRT = "SHIRT",
-  PANTS = "PANTS",
+  TROUSERS = "TROUSERS",
 }

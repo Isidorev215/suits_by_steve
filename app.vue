@@ -10,11 +10,11 @@
             <span>There are five suits you need to get in all. You should not mess it up.... Its all on you.... Make your 70+ suit combinations.</span>
           </p>
           <p class="hidden lg:block mt-3 mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-            <button @click="changeSuit(color.BLACK)" class="bg-stv-black pill">Black </button>
-            <button @click="changeSuit(color.BROWN)" class="bg-stv-brown pill">Brown </button>
-            <button @click="changeSuit(color.GRAY)" class="bg-stv-gray pill">Gray </button>
-            <button @click="changeSuit(color.NAVY)" class="bg-stv-navy pill">Navy </button>
-            <button @click="changeSuit(color.TAN)" class="bg-stv-tan pill">Tan </button>
+            <button @click="changeFullSuit(color.BLACK)" class="bg-stv-black pill">Black </button>
+            <button @click="changeFullSuit(color.BROWN)" class="bg-stv-brown pill">Brown </button>
+            <button @click="changeFullSuit(color.GRAY)" class="bg-stv-gray pill">Gray </button>
+            <button @click="changeFullSuit(color.NAVY)" class="bg-stv-navy pill">Navy </button>
+            <button @click="changeFullSuit(color.TAN)" class="bg-stv-tan pill">Tan </button>
           </p>
         
           <button title="Randomize" class="inline-flex justify-center items-center py-3 px-5 mt-2 lg:mt-0 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
@@ -33,7 +33,7 @@
           </Tab>
         </TabsWrapper>
 
-        <ImageControls />
+        <ImageControls @updateSuitSection="updateSuitSection" />
       </div>
     </main>
     
@@ -45,17 +45,27 @@
 </template>
 
 <script setup lang="ts">
-import { color } from '~/types/enums'
-import { fullSuitInterface } from '~/types/interfaces'
+import { color, suitSection } from '~/types/enums'
+import { fullSuitInterface, selectionInterface } from '~/types/interfaces'
 
   const fullSuitPayload = ref<fullSuitInterface>({
     jacket: color.BLACK,
-    inner: color.WHITE,
+    shirt: color.WHITE,
     trousers: color.BLACK,
   })
-  const changeSuit = (colorPayload: color) => {
+  const changeFullSuit = (colorPayload: color) => {
     fullSuitPayload.value.jacket = colorPayload;
     fullSuitPayload.value.trousers = colorPayload;
+  }
+
+  const updateSuitSection = (payload: selectionInterface) => {
+    if(payload.suitSection === suitSection.JACKET){
+      fullSuitPayload.value.jacket = payload.color;
+    }else if(payload.suitSection === suitSection.SHIRT){
+      fullSuitPayload.value.shirt = payload.color;
+    }else if(payload.suitSection === suitSection.TROUSERS){
+      fullSuitPayload.value.trousers = payload.color;
+    }
   }
 </script>
 
