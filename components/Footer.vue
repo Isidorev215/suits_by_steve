@@ -1,6 +1,6 @@
 <template>
 
-  <footer class=" w-full h-20 lg:h-16 p-4 bg-gray-100 md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+  <footer class="fixed bottom-0 w-full h-20 lg:h-16 p-4 bg-gray-100 md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#"
         class="hover:underline">Isidore Tech</a>. Some Rights Reserved.
     </span>
