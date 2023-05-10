@@ -28,11 +28,15 @@
     <button @click="generateRandom" class="absolute z-30 right-0 top-0 text-center text-xs px-2 py-1 mt-1 mr-1 bg-gray-500 dark:bg-gray-800 rounded-sm cursor-pointer transition-all">
       Randomize
     </button>
+
+    <!-- Image controls buttons -->
+    <ImageControls class="absolute bottom-0 z-30 ml-1 mb-1" @updateSuitSection="updateSuitSection" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { shirtColors, suitColors } from "~/types/enums";
+import { selectionInterface } from "~/types/interfaces";
 interface Props {
   propColor?: {
     jacket?: suitColors
@@ -48,7 +52,11 @@ const props = withDefaults(defineProps<Props>(), {
   })
 })
 
-const emit = defineEmits(['emitGenerateRandom'])
+const emit = defineEmits(['emitGenerateRandom', 'updateSuitSelectionForwarded'])
+
+const updateSuitSection = (payload: selectionInterface) => {
+  emit('updateSuitSelectionForwarded', payload)
+}
 
 const generateRandom = () => {
   emit('emitGenerateRandom')
