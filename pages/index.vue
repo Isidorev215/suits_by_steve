@@ -22,7 +22,7 @@
           </button>
         </div>
       </div>
-      <div class="right col-span-3 lg:col-span-1 px-4 lg:px-0 bg-transparent border-l-2 flex flex-col justify-around items-center">
+      <div class="right col-span-3 lg:col-span-1 px-4 bg-transparent border-l-2 flex flex-col justify-around items-center">
         
         <!-- <TabsWrapper>
           <Tab title="Suit 1">
@@ -33,7 +33,7 @@
           </Tab>
         </TabsWrapper> -->
         
-        <SuitOne class="w-11/12" :propColor="fullSuitPayload" />
+        <SuitOne class="w-full" :propColor="fullSuitPayload" />
         <ImageControls @updateSuitSection="updateSuitSection" />
       </div>
     </main>

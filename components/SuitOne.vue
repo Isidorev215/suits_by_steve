@@ -22,7 +22,12 @@
         :style="`fill: ${propColor.trousers};`"
       />
     </svg>
-    <img id="image" class="absolute top-0 w-full h-auto" src="~/assets/img/white_suit_1.jpg" alt="">
+    <img id="image" class="absolute top-0 w-full" src="~/assets/img/white_suit_1.jpg" alt="">
+
+    <!-- Random button -->
+    <button @click="generateRandom" class="absolute z-30 right-0 top-0 text-center text-xs px-2 py-1 mt-1 mr-1 bg-gray-500 dark:bg-gray-800 rounded-sm cursor-pointer transition-all">
+      Randomize
+    </button>
   </div>
 </template>
 
@@ -35,7 +40,6 @@ interface Props {
     trousers?: suitColors
   }
 }
-
 const props = withDefaults(defineProps<Props>(), {
   propColor: () => ({
     jacket: suitColors.BLACK,
@@ -43,6 +47,12 @@ const props = withDefaults(defineProps<Props>(), {
     trousers: suitColors.BLACK
   })
 })
+
+const emit = defineEmits(['emitGenerateRandom'])
+
+const generateRandom = () => {
+  emit('emitGenerateRandom')
+}
 </script>
 
 <style scoped>
