@@ -2,7 +2,7 @@
   <div>
     <Navbar />
 
-    <main class="grid grid-cols-3 gap-3 bg-white dark:bg-gray-900 lg:h-[calc(100vh-8rem)]">
+    <main class="grid grid-cols-3 gap-3 bg-white dark:bg-gray-900 h-[calc(100vh-8rem)]">
       <div class="left col-span-3 lg:col-span-2 flex justify-center items-center px-4 pt-5 pb-1">
         <div class="">
           <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white">Every man has to own a Black Suit.</h1>
@@ -24,16 +24,16 @@
       </div>
       <div class="right col-span-3 lg:col-span-1 px-4 lg:px-0 bg-transparent border-l-2 flex flex-col justify-around items-center">
         
-        <TabsWrapper>
+        <!-- <TabsWrapper>
           <Tab title="Suit 1">
             <SuitOne :propColor="fullSuitPayload" />
           </Tab>
           <Tab title="Suit 2">
             <img src="https://via.placeholder.com/640x800.png?text=No+Content" alt="">
-            <!-- <img src="~/assets/img/white_suit_2i.jpg" alt=""> -->
           </Tab>
-        </TabsWrapper>
-
+        </TabsWrapper> -->
+        
+        <SuitOne class="w-11/12" :propColor="fullSuitPayload" />
         <ImageControls @updateSuitSection="updateSuitSection" />
       </div>
     </main>

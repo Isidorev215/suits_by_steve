@@ -1,12 +1,12 @@
-import {color, suitSection} from '~/types/enums'
+import { suitSection, suitColors, shirtColors } from '~/types/enums'
 
 export interface fullSuitInterface{
-  jacket: color,
-  shirt: color,
-  trousers: color
+  jacket: suitColors,
+  shirt: shirtColors,
+  trousers: suitColors
 }
 
 export interface selectionInterface {
   suitSection: suitSection,
-  color: color
+  color: suitColors | shirtColors
 }
