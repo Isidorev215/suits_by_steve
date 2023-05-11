@@ -25,7 +25,7 @@
     <img id="image" class="absolute top-0 w-full" src="~/assets/img/white_suit_1.jpg" alt="">
 
     <!-- Random button -->
-    <button @click="generateRandom" class="absolute z-30 right-0 top-0 text-center text-xs px-2 py-1 mt-1 mr-1 bg-gray-500 dark:bg-gray-800 rounded-sm cursor-pointer transition-all">
+    <button @click="generateRandom" class="absolute z-30 right-0 top-0 text-center text-white text-xs px-2 py-1 mt-1 mr-1 bg-gray-500 dark:bg-gray-800 rounded-sm cursor-pointer transition-all">
       Randomize
     </button>
 

@@ -22,7 +22,10 @@
           </button>
         </div>
       </section>
-      <section class="w-96 flex lg:col-span-1 items-center bg-white dark:bg-gray-900">
+      <section class="w-96 flex flex-col lg:col-span-1 justify-center items-center bg-white dark:bg-gray-900">
+        <div class="lg:hidden top w-full h-full flex justify-center items-center">
+          <h2 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none md:text-3xl xl:text-4xl dark:text-white">So Sayeth Steve!</h2>
+        </div>
         <SuitOne class="w-full" :propColor="fullSuitPayload" @emitGenerateRandom="generateRandom" @updateSuitSelectionForwarded="updateSuitSection"/>
       </section>
     </main>
