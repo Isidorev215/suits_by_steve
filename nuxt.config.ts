@@ -15,6 +15,9 @@ export default defineNuxtConfig({
         { property: 'og:url', content: 'https://suitsbyharvey.web.app' },
         { property: 'twitter:card', content: 'https://suitsbyharvey.web.app/home_page_image.png' }
       ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ],
       htmlAttrs: { lang: 'en' }
     }
   },
