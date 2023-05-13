@@ -23,9 +23,9 @@
         </div>
       </section>
       <section class="flex flex-col items-center justify-center bg-white w-96 lg:col-span-1 dark:bg-gray-900">
-        <div class="flex items-center justify-center w-full h-full lg:hidden top">
+        <!-- <div class="flex items-center justify-center w-full h-full lg:hidden top">
           <h2 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none md:text-3xl xl:text-4xl dark:text-white">So Sayeth Steve!</h2>
-        </div>
+        </div> -->
         <SuitOne class="w-full" :propColor="fullSuitPayload" @emitGenerateRandom="generateRandom" @updateSuitSelectionForwarded="updateSuitSection"/>
       </section>
     </main>

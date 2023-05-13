@@ -2,11 +2,16 @@
 
   <footer class="fixed bottom-0 w-full h-20 lg:h-16 p-4 bg-gray-100 flex items-center justify-between md:p-6 dark:bg-gray-800">
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#"
-        class="hover:underline">By Isidore</a>. Some Rights Reserved.
+        class="hover:underline">By Isidore</a>. Are Rights Reserved?
     </span>
     <ul class="flex flex-wrap justify-end items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
       <li>
-        <button type="button" @click="(openDisclaimer = true)" class="mr-4 hover:underline md:mr-6 ">Disclaimer</button>
+        <button type="button" @click="(openDisclaimer = true)" class="mr-4 hover:underline md:mr-6 ">
+          <span class="w-6 h-6 flex justify-end items-center lg:hidden">
+            <Icon name="icon-park-outline:caution" width="90" :horizontalFlip="true" />
+          </span>
+          <span class="hidden lg:inline">Disclaimer</span>
+        </button>
       </li>
     </ul>
   </footer>
@@ -24,7 +29,7 @@
           <!-- Modal header -->
           <div class="flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600">
             <h3 class="text-xl font-medium text-gray-900 dark:text-white">
-                Disclaimer
+              Disclaimer
             </h3>
             <button @click="openDisclaimer = false" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="bottom-right-modal">
                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
